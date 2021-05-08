@@ -1,4 +1,7 @@
 
+Python第三方库大多以简单作为哲学之一，提供的API大多几行代码能够搞定。每次都搜索需要的库和代码略麻烦，在这个仓库把用过的一些东西单独做个分类，放些简单的代码实现和使用，当个简单功能的字典查。
+
+
 - [django web应用框架](#django-web应用框架)
 - [生成二维码](#生成二维码)
 - [微信公众号操作](#微信公众号操作)
@@ -28,8 +31,29 @@ https://github.com/lincolnloop/python-qrcode
 - 主动发送消息
 - 向服务器上传图片（返回URL或mediaid）
 
-
 # [sqlite数据库操作](sqlite)
 
 一个简单的sqlite数据库操作
+
+# [键盘鼠标控制](keyboard_mouse_control)
+
+可以使用两个库，PyAutoGUI和pynput。
+
+PyAutoGUI使用比较方便，可以直接用函数调用的形式发送键盘和鼠标消息，获取当前鼠标位置，但不能响应键盘消息。pynput用函数回调的方式能够响应鼠标消息。
+
+
+- 获取键盘按键以及发出键盘按键消息
+- 键盘全局快捷键响应
+- 获取鼠标位置以及移动鼠标位置
+
+
+文档在，感觉两个文档的示例代码都很简单，仓库就不放了。
+
+- `https://pyautogui.readthedocs.io/en/latest/quickstart.html`
+- `https://pynput.readthedocs.io/en/latest/index.html`
+
+TODO: 
+
+- 测试响应键盘消息的cpu消耗
+- 实现一个像autohotkey一样的脚本定义
 
