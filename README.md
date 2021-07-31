@@ -6,6 +6,7 @@ Python第三方库大多以简单作为哲学之一，提供的API大多几行�
 - [生成二维码](#生成二维码)
 - [微信公众号操作](#微信公众号操作)
 - [sqlite数据库操作](#sqlite数据库操作)
+- [键盘鼠标控制](#键盘鼠标控制)
 
 
 # [django web应用框架](django_code)
@@ -37,10 +38,9 @@ https://github.com/lincolnloop/python-qrcode
 
 # [键盘鼠标控制](keyboard_mouse_control)
 
-可以使用两个库，PyAutoGUI和pynput。
+可以使用三个库，PyAutoGUI、pynput、keyboard。
 
-PyAutoGUI使用比较方便，可以直接用函数调用的形式发送键盘和鼠标消息，获取当前鼠标位置，但不能响应键盘消息。pynput用函数回调的方式能够响应鼠标消息。
-
+PyAutoGUI使用比较方便，可以直接用函数调用的形式发送键盘和鼠标消息，获取当前鼠标位置，但不能响应键盘消息。pynput用函数回调的方式能够响应鼠标消息。pynput的快捷键修改映射在使用组合键时有点小问题，keyboard库使用没有问题，添加快捷键更容易，还多了一个录制键盘操作的功能。
 
 - 获取键盘按键以及发出键盘按键消息
 - 键盘全局快捷键响应
@@ -51,6 +51,7 @@ PyAutoGUI使用比较方便，可以直接用函数调用的形式发送键盘�
 
 - `https://pyautogui.readthedocs.io/en/latest/quickstart.html`
 - `https://pynput.readthedocs.io/en/latest/index.html`
+- `https://github.com/boppreh/keyboard`
 
 TODO: 
 
