@@ -46,8 +46,11 @@ PyAutoGUI使用比较方便，可以直接用函数调用的形式发送键盘�
 - 键盘全局快捷键响应
 - 获取鼠标位置以及移动鼠标位置
 
+几个库默认都没有默认支持全局键盘消息处理的机制，而是通过注册globalhotkey的快捷键，对快捷键调用回调函数的方式进行实现，通过这种方式避免python处理大量事件效率低的问题。
 
-文档在，感觉两个文档的示例代码都很简单，仓库就不放了。
+这几个库在windows上功能比较齐全而且出问题较少，在当前使用的archlinux+awesome上快捷键的处理有些问题。不支持快捷键消息的屏蔽（suppressed），发送快捷键如ctrl+f时，会触发先前的查找快捷键，而且将ctrl+f的响应函数设置为按下right键时，得到的效果是ctrl+right（可以用传出right键消息之前先release后press ctrl键），还有些按一次触发多次的坑不确定原因。
+
+文档在，感觉几个文档的示例代码都很简单，仓库就不放了。
 
 - `https://pyautogui.readthedocs.io/en/latest/quickstart.html`
 - `https://pynput.readthedocs.io/en/latest/index.html`
@@ -55,6 +58,6 @@ PyAutoGUI使用比较方便，可以直接用函数调用的形式发送键盘�
 
 TODO: 
 
-- 测试响应键盘消息的cpu消耗
-- 实现一个像autohotkey一样的脚本定义
+- [x]测试响应键盘消息的cpu消耗  注册的globalhotkey没有太大量的情况下，cpu消耗可以忽略，使用的事件传递机制而非循环检测的机制。
+- xxx 实现一个像autohotkey一样的脚本定义（这几个库在linux上都不支持屏蔽先前的快捷键，只能在没有键冲突时才有用，而且还有些modifier的问题，在win10上实现有睡眠后唤醒失效的问题需要解决，后面整理代码）
 
